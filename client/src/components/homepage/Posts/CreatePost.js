@@ -16,12 +16,22 @@ import { storage } from "../../../firebase/firebase"
 const styles = theme => ({
     container: {
       padding:"50px 0px  20px",
-       float:'left'
+       float:'left',
+       [theme.breakpoints.down(900)]:{
+         margin:'auto',
+         justifyContent: 'center',
+          alignContent:'center',
+            },
+       
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 300,
+    [theme.breakpoints.down(500)]:{
+            margin:'auto',
+            marginLeft:'20px'
+          },
     
   },
   
@@ -30,7 +40,8 @@ const styles = theme => ({
   },
   button:{
     padding:10,
-    marginLeft:50
+    marginLeft:20,
+    
     
   },
   divi:{
@@ -38,7 +49,7 @@ const styles = theme => ({
     display:'flex',
           justifyContent: 'center',
           alignContent:'center',
-          [theme.breakpoints.down(780)]:{
+          [theme.breakpoints.down(900)]:{
             display: 'table',
             margin:' auto',
            
@@ -138,7 +149,7 @@ export class CreatePost extends Component {
           </label>
           {
             this.state.filepreview && <img style={{width:300,height:300,padding:'0 20px'}} src={this.state.filepreview}/>
-           }
+          }
                  
             <TextField
               id="textarea"

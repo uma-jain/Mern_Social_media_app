@@ -84,13 +84,13 @@ router.get('/', (req, res) => {
   // like if notliked else unlike if laready liked counter acions
   router.patch('/like/:id',isLoggedIn,async(req,res)=>{
     let post=await Post.findById(req.params.id);
-    console.log(req.params.id)
+  //  console.log(req.params.id)
   
     try {
              
             if(post.likes.filter(likes=>likes.toString() === req.user.id).length > 0){
               
-              console.log('if true') 
+              //console.log('if true') 
               try {
                       post=await Post.findByIdAndUpdate(req.params.id,{
                         $inc:{likesCount:-1},

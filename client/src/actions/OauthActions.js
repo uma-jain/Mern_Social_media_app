@@ -75,9 +75,9 @@ export const registerUser = (user, history) =>async (dispatch) => {
          
         
     }catch(error) {
-       alert(error)  
+       //alert(error)  
         if(error) {
-        console.log('from oauthactions',error)
+      //  console.log('from oauthactions',error)
         const errors=error.response.data.errors;
         if(errors){
          errors.forEach(error=>dispatch(seterrors(error.msg)))
@@ -89,7 +89,7 @@ export const registerUser = (user, history) =>async (dispatch) => {
 
 //LOGOUT
 export const logoutUser=(history)=>dispatch=>{
-  console.log('history is',history)
+  //console.log('history is',history)
   localStorage.removeItem('token');
      dispatch({type:LOGOUT})  
      dispatch({type:RESET_POST}) 

@@ -46,7 +46,7 @@ class App extends React.Component {
 </Router>)
 }}
 function mapStatetoprops(state){
-  console.log(state.auth)
+ // console.log(state.auth)
   return{auth:state.auth}
 }
 

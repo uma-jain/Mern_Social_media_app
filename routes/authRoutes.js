@@ -3,7 +3,6 @@ const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const keys = require('../config/keys');
 const { check, validationResult } = require('express-validator');
 const isLoggedIn=require("../middlewares/loggedin");
 
@@ -50,7 +49,7 @@ try{
 
       jwt.sign(
         payload,
-        keys.jwtSecret,
+        process.env.JWT_SECRET,
         { expiresIn: 36000 },
         (err, token) => {
           if(err )throw err;
@@ -89,7 +88,7 @@ router.post('/login', [
     // Check for user
     if (!user) {
       
-      return res.status(404).json({errors:[{msg:'Invalid Credentials'}]});
+      return res.status(404).json({errors:[{msg:'User Doesnt Exist!'}]});
     }
 
     // Check Password
@@ -101,7 +100,7 @@ router.post('/login', [
         // Sign Token
         jwt.sign(
           payload,
-          keys.jwtSecret,
+         process.env.JWT_SECRET,
           { expiresIn: 36000 },
           (err, token) => {
             if(err )throw err;

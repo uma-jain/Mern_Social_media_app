@@ -31,9 +31,18 @@ const ITEM_HEIGHT = 48;
 
 const styles = theme => ({
   card: {
-    margin: '20px auto',
-    width: '95%',
-    backgroundColor:'#fafafa'
+    margin:'25px auto',
+    width: '75%',
+    backgroundColor:'#fafafa',
+    padding:20,
+    [theme.breakpoints.down(670)]:{
+      width: '95%',
+    },
+    [theme.breakpoints.down(550)]:{
+      width: '95%',
+      margin:'auto',
+    },
+    
   },
   actions: {
     display: 'flex'
@@ -82,6 +91,11 @@ const styles = theme => ({
   expandOpen: {
     transform: 'rotate(180deg)'
   },
+  image:{
+    width:'400px',height:'300px',  
+    boxShadow: '6px 8px 5px #000',
+    
+  }
 });
 
 class Post extends Component {
@@ -188,8 +202,7 @@ class Post extends Component {
           post.postimageUrl && 
             <div style={{padding:'23px'}}>
             <img 
-            style={{ width:'400px',height:'300px',  
-            boxShadow: '6px 8px 5px #000'}} 
+            className={classes.image}
             src={post.postimageUrl}></img>
             </div>
                        

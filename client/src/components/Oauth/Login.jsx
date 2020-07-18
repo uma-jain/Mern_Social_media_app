@@ -102,7 +102,7 @@ handleSubmit = (e) => {
             <form onSubmit={this.handleSubmit}>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="email">Email Address</InputLabel>
-                <Input id="email" name="email" autoComplete="email"type="email" 
+                <Input id="email" name="email" autoComplete="email" type="email" 
                 onChange={this.handleInputChange} autoFocus />
               </FormControl>
               <FormControl margin="normal" required fullWidth>

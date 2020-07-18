@@ -14,13 +14,14 @@ export class PostFeed extends Component {
     render() {
        const {posts:{posts,loading},user,isprofilepage,isUserProfile,retrievedUserId} =this.props
        if(isUserProfile){
-       console.log('post feed',retrievedUserId)}
+       
+      }
        if(loading  || posts === null)
        {    return <div>Spinner</div>  }  
       
       
        return (
-            <div style={{width:'70%',margin:'auto'}}>
+            <div style={{width:'90%',margin:'auto'}}>
             
           {
             this.props.posts?(

@@ -10,7 +10,7 @@ export const getcurrentProfile=()=>async dispatch=>{
      
      dispatch({type:GET_PROFILE,payload:res.data})
  } catch (error) {
-    console.log(error)
+   // console.log(error)
      dispatch({type:PROFILE_ERROR,payload:error})
  }
 }

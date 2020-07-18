@@ -33,9 +33,13 @@ const styles = theme => ({
     justifyContent:'center',
     backgroundColor: 'theme.palette.background.paper',
     boxShadow: theme.shadows[5],
-    [theme.breakpoints.down(980)]:{
+    [theme.breakpoints.down(1380)]:{
+     
+      padding:'100px'
+    },
+    [theme.breakpoints.down(680)]:{
       width:'100%',
-      padding:'20px'
+      padding:'30px'
     },
   },
   avatar: {

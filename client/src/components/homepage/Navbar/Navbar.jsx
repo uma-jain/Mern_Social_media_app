@@ -28,7 +28,7 @@ const styles = {
   },
   colour:{
    background:'#607d8b',
-   height:"70px"
+   height:"60px"
     },
     logo: {
       color: '#fff',
@@ -40,7 +40,7 @@ class Navbar extends Component {
  
   render() {
     const { classes ,auth,history} = this.props;
-    console.log("history from navbar is",history)
+    
        return (
       <div className={classes.root}>
         <AppBar position="static" className={classes.colour}>
