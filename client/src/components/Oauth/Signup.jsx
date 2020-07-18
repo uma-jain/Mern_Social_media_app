@@ -16,15 +16,15 @@ import * as actions from "../../actions/OauthActions"
 
 import { Redirect } from "react-router-dom";
 const styles = theme => ({
-    layout: {
-      width: 'auto',
+  layout: {
+    width: 'auto',
     display: 'block', // Fix IE11 issue.
     width: 400,
-     backgroundColor:'90a4ae',
-    },
-    paper: {
-      position: 'absolute',
-    padding: theme.spacing.unit * 35,
+     backgroundColor:'90a4ae'  
+  },
+  paper:{
+    position: 'absolute',
+    padding: theme.spacing.unit * 37,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -34,29 +34,28 @@ const styles = theme => ({
     backgroundColor: 'theme.palette.background.paper',
     boxShadow: theme.shadows[5],
     [theme.breakpoints.down(980)]:{
-      
-    padding: theme.spacing.unit * 15,
-      width:'100%'
+      width:'100%',
+      padding:'20px'
     },
-    },
-    avatar: {
-      margin: theme.spacing.unit,
-      backgroundColor: theme.palette.secondary.main
-    },
-    submit: {
-      marginTop: theme.spacing.unit * 3
-    },
-    link: {
-      textDecoration: 'none'
-    },
-    errorText: {
-      color: '#D50000',
-      marginTop: '5px'
-    },
-    footer: {
-      marginTop: theme.spacing.unit * 2
-    }
-  });
+  },
+  avatar: {
+    margin: theme.spacing.unit,
+    backgroundColor: theme.palette.secondary.main
+  },
+  submit: {
+    marginTop: theme.spacing.unit * 3
+  },
+  link: {
+    textDecoration: 'none'
+  },
+  errorText: {
+    color: '#D50000',
+    marginTop: '5px'
+  },
+  footer: {
+    marginTop: theme.spacing.unit * 2
+  }
+});
 
   
   export class Signup extends Component {
@@ -83,7 +82,7 @@ const styles = theme => ({
       };
       
       const { history, registerUser } = this.props;
-      console.log('handle submit');
+      
       registerUser(user, history);
     };
       render() {
