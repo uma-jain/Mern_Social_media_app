@@ -5,6 +5,8 @@ import Navbar from "./Navbar/Navbar"
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom'
 import * as actions from "../../actions/OauthActions";
+
+import CircularProgress from '@material-ui/core/CircularProgress';
 export class Homepage extends Component {
    
     render() {
@@ -13,7 +15,7 @@ export class Homepage extends Component {
          return <Redirect to='/login'></Redirect>
          }
          if(!this.props.auth.user){
-           return <div>Loading</div>
+           return <CircularProgress></CircularProgress>
          }
         return(  <div style={{margin:0,padding:0}}>
          <Navbar history={this.props.history}></Navbar>

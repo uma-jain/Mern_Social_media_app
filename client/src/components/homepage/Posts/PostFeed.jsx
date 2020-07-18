@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import DisplayPost from "./DisplayPost"
 import { connect } from 'react-redux';
 import * as actions from "../../../actions/PostActions"
-import { retrieveUser } from '../../../actions/Useractions';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export class PostFeed extends Component {
 
@@ -17,7 +17,7 @@ export class PostFeed extends Component {
        
       }
        if(loading  || posts === null)
-       {    return <div>Spinner</div>  }  
+       {    return <CircularProgress />  }  
       
       
        return (

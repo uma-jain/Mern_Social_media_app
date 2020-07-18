@@ -28,7 +28,7 @@ const styles = {
   },
   colour:{
    background:'#607d8b',
-   height:"60px"
+   height:"75px"
     },
     logo: {
       color: '#fff',
