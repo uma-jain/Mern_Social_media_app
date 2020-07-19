@@ -13,9 +13,7 @@ export class PostFeed extends Component {
 
     render() {
        const {posts:{posts,loading},user,isprofilepage,isUserProfile,retrievedUserId} =this.props
-       if(isUserProfile){
        
-      }
        if(loading  || posts === null)
        {    return <CircularProgress />  }  
       
