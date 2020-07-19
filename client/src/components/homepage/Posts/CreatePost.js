@@ -78,18 +78,18 @@ export class CreatePost extends Component {
       }  
       
       handleSubmit  = (e) => {
-        alert('handling')
+        
         e.preventDefault()
         this.setState({postImageUploadedspinner:true})
-        console.log(this.state.postImageUploaded)
-        console.log(this.state.postImage)
+        //console.log(this.state.postImageUploaded)
+        //console.log(this.state.postImage)
         // now async code goes here
         if(this.state.postImage)
        { const uploadTask = storage.ref(`/mernsocialmedia/posts/${this.state.postImage.name}`).put(this.state.postImage)
         uploadTask.on('state_changed', 
       (snapShot) => {
         //takes a snap shot of the process as it is happening
-        console.log(snapShot)
+       // console.log(snapShot)
       }, (err) => {
         //catches the errors
         console.log(err)
@@ -101,7 +101,7 @@ export class CreatePost extends Component {
          .then(fireBaseUrl => {
           // console.log("url is ",fireBaseUrl);  
           this.setState({postImage:fireBaseUrl})
-           console.log("calling create post")
+         //  console.log("calling create post")
           this.props.createPost(this.state.postText,this.state.postImage);
           this.setState({postImageUploadedspinner:false,filepreview:null,postText:null,setcancelbutton:false,postImage:null}) 
         })
