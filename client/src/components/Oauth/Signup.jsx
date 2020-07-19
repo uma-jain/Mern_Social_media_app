@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   paper:{
     position: 'absolute',
-    padding: theme.spacing.unit * 37,
+    padding: theme.spacing.unit * 40,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

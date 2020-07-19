@@ -3,23 +3,39 @@ import DisplayPost from "./DisplayPost"
 import { connect } from 'react-redux';
 import * as actions from "../../../actions/PostActions"
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  divi:{
+    width:'90%',margin:'auto',
+    [theme.breakpoints.down(700)]:{
+      width: '100%',
+      margin:0,
+      padding:0,
+      marginTop:30,
+      marginBottom:30
+    },
+  }
+})
 
 export class PostFeed extends Component {
 
+
+  
  componentDidMount(){
     this.props.getPosts();
   }
   
 
     render() {
-       const {posts:{posts,loading},user,isprofilepage,isUserProfile,retrievedUserId} =this.props
+       const {posts:{posts,loading},user,isprofilepage,isUserProfile,retrievedUserId,classes} =this.props
        
        if(loading  || posts === null)
        {    return <CircularProgress />  }  
       
       
        return (
-            <div style={{width:'90%',margin:'auto'}}>
+            <div className={classes.divi}>
             
           {
             this.props.posts?(
@@ -55,4 +71,4 @@ function mapStateToProps({post,auth }) {
     return { posts: post,user:auth.user };
   }
 
-export default connect(mapStateToProps,actions)(PostFeed)
+export default withStyles(styles)(connect(mapStateToProps,actions)(PostFeed))

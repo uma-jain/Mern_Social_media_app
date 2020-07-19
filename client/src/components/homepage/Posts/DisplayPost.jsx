@@ -36,11 +36,19 @@ const styles = theme => ({
     backgroundColor:'#fafafa',
     padding:20,
     [theme.breakpoints.down(670)]:{
-      width: '95%',
+      width: '100%',
+      margin:0,
+      padding:0
     },
     [theme.breakpoints.down(550)]:{
-      width: '95%',
+      width: '100%',
       margin:'auto',
+      padding:0
+    },
+    [theme.breakpoints.down(400)]:{
+      width: '100%',
+      margin:0,
+     
     },
     
   },
@@ -59,7 +67,12 @@ const styles = theme => ({
     top: '50%',
     left: '50%',
     outline: 'none',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    [theme.breakpoints.down(600)]:{
+     width:'100%',
+     padding: 0,
+     width:' 100%',
+    },
   },
   spacing: {
     marginBottom: '10px'
@@ -94,8 +107,13 @@ const styles = theme => ({
   image:{
     width:'400px',height:'300px',  
     boxShadow: '6px 8px 5px #000',
-    
-  }
+      },
+        imageContainer:{
+        padding:20,
+        [theme.breakpoints.down(400)]:{
+          padding:0
+         },
+      }
 });
 
 class Post extends Component {
@@ -200,11 +218,12 @@ class Post extends Component {
         
          {
           post.postimageUrl && 
-            <div style={{padding:'23px'}}>
+            <div className={classes.imageContainer}>
             <img 
             className={classes.image}
             src={post.postimageUrl}></img>
             </div>
+        
                        
          }
         <CardContent>
