@@ -17,7 +17,15 @@ const styles = theme => ({
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3
     }
+  },
+  divi:{
+    padding:'80',
+    margin:'0 80px',
+    [theme.breakpoints.down(500)]: {
+      
+      margin:'0 20px'
   }
+}
 });
 
 export class FollowingPage extends Component {
@@ -34,9 +42,9 @@ export class FollowingPage extends Component {
     return loading ? (
       <div>Loading</div>
     ) : (
-      <div>
+      <div >
         <Navbar history={history}/>
-        <main style={{padding:'80px'}}>
+        <main className={classes.divi}>
           <div className={classes.layout, classes.cardGrid}>
             <Grid container justify="center" spacing={10}>
               {users.map(user =>{ 

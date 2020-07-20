@@ -10,13 +10,20 @@ const styles = theme => ({
   cardGrid: {
     padding: `${theme.spacing.unit * 8}px 0`
   },
+mainstyle:
+  {padding:'80px',
+  [theme.breakpoints.down(700)]: {
+    padding:'10px'
+  }
+   },
   layout: {
     width: 'auto',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3
     }
-  }
+  },
+  
 });
 export class DiscoverPage extends Component {
 
@@ -37,7 +44,7 @@ export class DiscoverPage extends Component {
 
       <div>
       <Navbar></Navbar>
-        <main style={{padding:'80px'}}>
+        <main className={classes.mainstyle}>
           <div className={classes.layout, classes.cardGrid}>
             <Grid container justify="center" spacing={10} >
               {users.map(user => {

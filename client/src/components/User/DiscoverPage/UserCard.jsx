@@ -23,7 +23,11 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     margin:'auto',
-    padding:'50px'
+    padding:'50px',
+     [theme.breakpoints.down(700)]:{
+      padding:'80px',    
+                     
+          },
   },
   link: {
     textDecoration: 'none',
@@ -43,7 +47,16 @@ const styles = theme => ({
   },
   buttonsalign:{
             justifyContent: 'center',
-            padding:15
+            padding:15,
+           
+  },
+  divCard:{
+    padding:40,justifyContent: 'center',backgroundColor:'#eceff1',
+    [theme.breakpoints.down(700)]:{
+          
+                   
+      },
+  
   }
   
   
@@ -55,7 +68,7 @@ class  UserCard extends React.Component {
     const { classes, user,update_followings,isFollowing }=this.props
     
   return(
-  <Card style={{padding:40,justifyContent: 'center',backgroundColor:'#eceff1'}}>
+  <Card className={classes.divCard}>
         <div className={classes.container, classes.cardContent}>
       <Avatar style={{margin:'auto'}} className='avatar' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRONmS_QTUl_bSx28J4PRjQ03HFgn8c9q1QJPvWByJZmBu4o_XD&usqp=CAU'>
       </Avatar>
